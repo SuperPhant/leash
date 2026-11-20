@@ -71,7 +71,8 @@ export function loadKey(envName: string, vaultEntry: string): Hex {
   return normalizeKey(r.stdout.trim());
 }
 
-function normalizeKey(k: string): Hex {
+function normalizeKey(raw: string): Hex {
+  const k = raw.trim();
   const key = (k.startsWith("0x") ? k : `0x${k}`) as Hex;
   if (!/^0x[0-9a-fA-F]{64}$/.test(key)) throw new Error("malformed private key (value suppressed)");
   return key;
