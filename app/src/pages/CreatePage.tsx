@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { decodeEventLog, formatEther, parseSignature, parseUnits } from "viem";
 import { useWallet } from "../App";
 import { ABI, testnet } from "../clients";
-import { CHAIN, DEP, STOCK_NAMES } from "../config";
+import { CHAIN, DEP, STOCK_NAMES, VIBENET_ID, onChain } from "../config";
 import { Card, Spinner } from "../ui";
 import { fmtUsd, short, useAsync } from "../util";
 import { PROFILES } from "../../../agent/src/profiles";
@@ -231,7 +231,7 @@ export function CreatePage() {
             <div className="small">
               Connected <code>{short(address)}</code> · {bal.data ? `${Number(formatEther(bal.data.eth)).toFixed(5)} ETH · ${fmtUsd(Number(bal.data.usd) / 1e6, 0)} tUSD` : <Spinner />}
             </div>
-            {bal.data && bal.data.eth === 0n && CHAIN.id !== 84538453 && (
+            {bal.data && bal.data.eth === 0n && CHAIN.id !== VIBENET_ID && (
               <div className="note">
                 You need a little {CHAIN.name} ETH for gas:{" "}
                 {(FAUCETS[CHAIN.id] ?? []).map(([n, u], i) => (
@@ -242,10 +242,12 @@ export function CreatePage() {
                     </a>
                   </span>
                 ))}
+                . No captcha wanted? <a href={onChain(VIBENET_ID, "#/create")}>Create your vault on Base Vibenet</a>, where test gas
+                is one click.
               </div>
             )}
             <div className="row gap wrap">
-              {CHAIN.id === 84538453 && (
+              {CHAIN.id === VIBENET_ID && (
                 <button className="btn small ghost" onClick={dripGas} disabled={busy}>
                   Get test ETH (gas)
                 </button>

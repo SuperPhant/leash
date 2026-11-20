@@ -32,6 +32,7 @@ export const vibenet = defineChain({
   nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
   rpcUrls: { default: { http: ["https://rpc.vibes.base.org"] } },
   blockExplorers: { default: { name: "Vibenet Explorer", url: "https://chain.base.org/vibenet/explorer" } },
+  contracts: { multicall3: { address: "0xcA11bde05977b3631167028862bE2a173976CA11" } },
   testnet: true,
 });
 
@@ -39,12 +40,17 @@ const found = import.meta.glob("../../deployments/*.json", { eager: true, import
   string,
   Deployment
 >;
+/** Every chain Leash is deployed on, Base Sepolia first. */
 export const DEPLOYMENTS = Object.values(found).sort((a, b) => (a.chainId === 84532 ? -1 : b.chainId === 84532 ? 1 : 0));
 
 function pick(): Deployment {
   const wanted = Number(new URLSearchParams(location.search).get("chain") ?? import.meta.env.VITE_CHAIN_ID ?? 84532);
   return DEPLOYMENTS.find((d) => d.chainId === wanted) ?? DEPLOYMENTS[0];
 }
+
+export const VIBENET_ID = 84538453;
+/** Link to a page of this app on another chain. */
+export const onChain = (chainId: number, hash = "#/") => `${location.pathname}?chain=${chainId}${hash}`;
 
 export const DEP: Deployment = pick();
 export const CHAIN: Chain = DEP?.chainId === baseSepolia.id ? baseSepolia : vibenet;

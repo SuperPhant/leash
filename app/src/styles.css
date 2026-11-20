@@ -823,3 +823,9 @@ td {
     font-size: 2rem;
   }
 }
+select.chip.net {
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  appearance: auto;
+}

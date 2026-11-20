@@ -1,5 +1,6 @@
 import { createPublicClient, createWalletClient, custom, http, type Abi, type WalletClient } from "viem";
 import { CHAIN, DEP, MAINNET, MAINNET_RPC } from "./config";
+import { patientRpc } from "./rpc";
 import LeashVault from "./abi/LeashVault.json";
 import LeashFactory from "./abi/LeashFactory.json";
 import LeashDesk from "./abi/LeashDesk.json";
@@ -18,7 +19,11 @@ export const ABI = {
   feed: Aggregator.abi as Abi,
 };
 
-export const testnet = createPublicClient({ chain: CHAIN, transport: http(undefined, { batch: true, retryCount: 3 }) });
+export const testnet = createPublicClient({
+  chain: CHAIN,
+  batch: { multicall: { wait: 20 } },
+  transport: patientRpc(CHAIN.rpcUrls.default.http[0]),
+});
 export const mainnet = createPublicClient({ chain: MAINNET, transport: http(MAINNET_RPC, { batch: true, retryCount: 3 }) });
 
 type Eip1193 = { request: (args: { method: string; params?: unknown }) => Promise<unknown>; on?: (e: string, f: (...a: any[]) => void) => void };
