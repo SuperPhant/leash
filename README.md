@@ -16,8 +16,10 @@ never move money out, and the owner can pause it or withdraw everything at any t
 
 ### Try it in two minutes
 
-1. Open the app and press **Create vault**. Your wallet is asked to add the Base testnet the demo runs on.
-2. Press **Get test ETH (gas)** and **Get 10,000 tUSD**. No captcha, no sign-up.
+1. Open the app (it runs on Base Sepolia; the menu at the top switches to Base Vibenet) and press **Create vault**. Your
+   wallet is asked to add the network.
+2. Get test ETH for gas: on Base Vibenet press **Get test ETH (gas)** (one click, no captcha); on Base Sepolia use any
+   Base Sepolia faucet. Then press **Get 10,000 tUSD**.
 3. Pick a preset, adjust the caps, sign one permit and send one transaction.
 4. The agent picks your vault up on its next run. Meanwhile, open any vault and press **Try it** under
    *Try to break the leash* to watch the contract reject out-of-mandate actions (simulated as the agent, no gas).
@@ -46,7 +48,7 @@ the result is within the mandate.
 
 ## What happens in practice
 
-These are real outcomes from the live deployment:
+These are real outcomes from the live deployments:
 
 - **The LLM asked for 45% AAPL and 45% AMZN; the leash clipped both to the 30% cap.** The rationale document records the
   model's proposal, the clipped weights and why.
@@ -60,9 +62,10 @@ These are real outcomes from the live deployment:
 
 ## How it works
 
-The live demo runs on **Base Vibenet** (chain id 84538453), Base's official preview testnet, where new Base features go
-live first and whose faucet needs no captcha, so anyone can try the full flow. The same deployment script
-(`agent/src/deploy.ts`) targets Base Sepolia.
+The live demo runs on **Base Sepolia** (chain id 84532) and, with the same contracts and the same agent, on **Base
+Vibenet** (chain id 84538453), Base's official preview testnet, whose faucet needs no captcha, so anyone can try the full
+flow from the app. The deployment script (`agent/src/deploy.ts`) targets either; addresses are in
+[`deployments/`](deployments).
 
 ```
  Base mainnet (read only)                       Leash agent (GitHub Actions, every 2h)          Base testnet
@@ -108,7 +111,7 @@ live first and whose faucet needs no captcha, so anyone can try the full flow. T
 ### The agent (`agent/`)
 
 TypeScript + viem, run by [`.github/workflows/agent.yml`](.github/workflows/agent.yml) every two hours around US market
-hours. Each cycle:
+hours, once per chain (Base Sepolia, then Base Vibenet). Each cycle:
 
 1. mirrors new mainnet Chainlink rounds and B20 multipliers to the testnet;
 2. builds signals only from onchain and issuer data: 1/5/20-day total returns, 20-day volatility and drawdown from
