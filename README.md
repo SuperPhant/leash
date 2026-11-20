@@ -9,9 +9,18 @@ rebalance is checked onchain and reverts if it breaks a rule. The agent can only
 never move money out, and the owner can pause it or withdraw everything at any time.
 
 - **App:** https://superphant.github.io/leash/
+- **Demo video (2 min):** [leash_demo.mp4](https://github.com/SuperPhant/leash/releases/download/demo-v1/leash_demo.mp4)
 - **Agent runs and rationale documents:** [`notes` branch](https://github.com/SuperPhant/leash/tree/notes)
 - **Contracts and addresses:** [`deployments/`](deployments)
 - Built for the [Base Stocks Maxxing](https://www.base.org/stocksmaxxing) builder quest, Agentic Stock Finance track.
+
+### Try it in two minutes
+
+1. Open the app and press **Create vault**. Your wallet is asked to add the Base testnet the demo runs on.
+2. Press **Get test ETH (gas)** and **Get 10,000 tUSD**. No captcha, no sign-up.
+3. Pick a preset, adjust the caps, sign one permit and send one transaction.
+4. The agent picks your vault up on its next run. Meanwhile, open any vault and press **Try it** under
+   *Try to break the leash* to watch the contract reject out-of-mandate actions (simulated as the agent, no gas).
 
 > Testnet demonstration. Test tokens mirror Coinbase tokenized stocks on Base mainnet; they have no value, are not
 > securities and are not issued by Coinbase. Not investment advice. Coinbase tokenized stocks are not available to US
@@ -50,6 +59,10 @@ These are real outcomes from the live deployment:
   frozen and keeps its weight unchanged.
 
 ## How it works
+
+The live demo runs on **Base Vibenet** (chain id 84538453), Base's official preview testnet, where new Base features go
+live first and whose faucet needs no captcha, so anyone can try the full flow. The same deployment script
+(`agent/src/deploy.ts`) targets Base Sepolia.
 
 ```
  Base mainnet (read only)                       Leash agent (GitHub Actions, every 2h)          Base testnet

@@ -88,6 +88,27 @@ export function CreatePage() {
 
   const set = (k: keyof Form, v: number | string) => setF((x) => ({ ...x, [k]: v }));
 
+  const dripGas = async () => {
+    if (!address) return;
+    setBusy(true);
+    setStatus("Requesting test ETH from the Vibenet faucet…");
+    try {
+      const r = await fetch("https://api.vibes.base.org/api/vibenet/faucet/drip", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ address }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(body?.error ?? body?.message ?? `HTTP ${r.status}`);
+      if (body.tx_hash) await testnet.waitForTransactionReceipt({ hash: body.tx_hash });
+      setStatus("0.1 test ETH received for gas.");
+    } catch (e: any) {
+      setStatus(`Faucet: ${e?.message ?? e}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const claim = async () => {
     setBusy(true);
     setStatus("Claiming test USD…");
@@ -210,7 +231,7 @@ export function CreatePage() {
             <div className="small">
               Connected <code>{short(address)}</code> · {bal.data ? `${Number(formatEther(bal.data.eth)).toFixed(5)} ETH · ${fmtUsd(Number(bal.data.usd) / 1e6, 0)} tUSD` : <Spinner />}
             </div>
-            {bal.data && bal.data.eth === 0n && (
+            {bal.data && bal.data.eth === 0n && CHAIN.id !== 84538453 && (
               <div className="note">
                 You need a little {CHAIN.name} ETH for gas:{" "}
                 {(FAUCETS[CHAIN.id] ?? []).map(([n, u], i) => (
@@ -223,7 +244,12 @@ export function CreatePage() {
                 ))}
               </div>
             )}
-            <div className="row gap">
+            <div className="row gap wrap">
+              {CHAIN.id === 84538453 && (
+                <button className="btn small ghost" onClick={dripGas} disabled={busy}>
+                  Get test ETH (gas)
+                </button>
+              )}
               <button className="btn small ghost" onClick={claim} disabled={busy || (!!bal.data?.nextClaim && bal.data.nextClaim > Date.now() / 1000)}>
                 Get 10,000 tUSD
               </button>
@@ -231,6 +257,7 @@ export function CreatePage() {
                 bal.data.nextClaim > Date.now() / 1000 && <span className="muted small">next claim {new Date(bal.data.nextClaim * 1000).toLocaleString()}</span>
               ) : null}
             </div>
+            {status && !created && <p className="small">{status}</p>}
           </div>
         )}
       </Card>
