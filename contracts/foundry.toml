@@ -1,0 +1,26 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.30"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+hardfork = "base:Denim"
+remappings = [
+    "base-std/=lib/base-std/src/",
+    "forge-std/=lib/forge-std/src/",
+]
+
+[profile.default.fuzz]
+runs = 256
+
+[rpc_endpoints]
+base = "https://mainnet.base.org"
+base_sepolia = "https://sepolia.base.org"
+vibenet = "https://rpc.vibes.base.org"
+
+[fmt]
+line_length = 120
+tab_width = 4
+quote_style = "double"

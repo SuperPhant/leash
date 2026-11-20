@@ -1,0 +1,68 @@
+name: agent
+
+# The Leash research agent: mirrors Base mainnet tokenized-stock prices to the testnet, researches, and rebalances
+# every vault delegated to it inside its onchain mandate. Rationale documents are published to the `notes` branch.
+on:
+  schedule:
+    - cron: "23 13-21/2 * * 1-5" # every 2 hours around US market hours, weekdays
+    - cron: "41 3 * * *" # daily off-hours run: price relay + status
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Simulate rebalances without sending them
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leash-agent
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      LEASH_CHAIN: ${{ vars.LEASH_CHAIN || 'baseSepolia' }}
+      LEASH_NOTES_DIR: ${{ github.workspace }}/notes-out
+      AGENT_KEY: ${{ secrets.AGENT_KEY }}
+      LEASH_LLM_KEY: ${{ secrets.LEASH_LLM_KEY }}
+      LEASH_DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the notes branch
+        run: |
+          if git fetch origin notes:notes; then
+            git worktree add notes-out notes
+          else
+            git worktree add --detach notes-out
+            cd notes-out
+            git checkout --orphan notes
+            git rm -rf --quiet . || true
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: agent/package-lock.json
+
+      - run: npm ci
+        working-directory: agent
+
+      - name: Run one agent cycle
+        run: npx tsx src/run.ts
+        working-directory: agent
+
+      - name: Publish rationale notes and status
+        if: always()
+        working-directory: notes-out
+        run: |
+          git config user.name "leash-agent[bot]"
+          git config user.email "leash-agent[bot]@users.noreply.github.com"
+          git add -A
+          git commit --quiet -m "agent run $(date -u +%Y-%m-%dT%H:%M:%SZ)" || exit 0
+          git push origin HEAD:notes

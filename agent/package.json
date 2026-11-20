@@ -1,0 +1,27 @@
+{
+  "name": "leash-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Leash research agent: mirrors Base mainnet tokenized-stock prices to testnet and rebalances Leash vaults inside their onchain mandates.",
+  "license": "MIT",
+  "scripts": {
+    "abi": "tsx src/exportAbi.ts",
+    "deploy": "tsx src/deploy.ts",
+    "relay": "tsx src/relay.ts",
+    "run": "tsx src/run.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "ox": "^1.8.16",
+    "tsx": "^4.23.15",
+    "viem": "^2.57.19"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
