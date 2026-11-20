@@ -23,9 +23,10 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     env:
-      LEASH_CHAIN: ${{ vars.LEASH_CHAIN || 'baseSepolia' }}
+      # Space-separated chains to run, e.g. "baseSepolia vibenet".
+      LEASH_CHAINS: ${{ vars.LEASH_CHAINS || vars.LEASH_CHAIN || 'baseSepolia' }}
       LEASH_NOTES_DIR: ${{ github.workspace }}/notes-out
       AGENT_KEY: ${{ secrets.AGENT_KEY }}
       LEASH_LLM_KEY: ${{ secrets.LEASH_LLM_KEY }}
@@ -53,8 +54,19 @@ jobs:
       - run: npm ci
         working-directory: agent
 
-      - name: Run one agent cycle
-        run: npx tsx src/run.ts
+      - name: Run one agent cycle per chain
+        run: |
+          status=0
+          first=1
+          for chain in $LEASH_CHAINS; do
+            # the keyless LLM endpoint allows about one request per 45 s per IP
+            if [ "$first" = 0 ]; then sleep 50; fi
+            first=0
+            echo "::group::$chain"
+            LEASH_CHAIN=$chain npx tsx src/run.ts || status=1
+            echo "::endgroup::"
+          done
+          exit $status
         working-directory: agent
 
       - name: Publish rationale notes and status

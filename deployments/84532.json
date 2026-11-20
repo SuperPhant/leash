@@ -1,0 +1,114 @@
+{
+  "chainId": 84532,
+  "chainName": "Base Sepolia",
+  "deployedAt": "2026-11-20T20:58:26.901Z",
+  "deployer": "0x3EeE68432E42cA90b1B9500732bB958E25155AFA",
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "dataSuffix": "0x62635f646d31687169316c0b0080218021802180218021802180218021",
+  "hub": "0xaae1642d99d83a3cd6e05b0c14fd2d5fa2b6f1a9",
+  "usd": "0xB200000000000000000001C63E9D844496A7bf10",
+  "desk": "0x9a5e0c8a613b7586471a20ea4f6cf1f388292848",
+  "faucet": "0xf43dae5250ec6462a42e5f7a1fb2b0401685a5fb",
+  "factory": "0xa68b0f744caedc0d67c1a1290c7ef383a036113f",
+  "startBlock": "61431421",
+  "stocks": [
+    {
+      "ticker": "AAPL",
+      "token": "0xB200000000000000000000781e561248828Cb6ad",
+      "feed": "0xa813772199915f36e74d636db7D7cFB2ED36D7DB",
+      "feedId": 0,
+      "mainnetToken": "0xb200000000000000000000C2e324d24d7eEcd1fb",
+      "mainnetFeed": "0x787f13dEa48Db0897CbCDD985de77809D837F988"
+    },
+    {
+      "ticker": "AMZN",
+      "token": "0xB2000000000000000000000C127c82Ae2972cB39",
+      "feed": "0x59046BA88F53db350703476d96090F4805C1352E",
+      "feedId": 1,
+      "mainnetToken": "0xb200000000000000000000d9192b6B456483C2E8",
+      "mainnetFeed": "0x06A8E4b3aBB3B7543d8396FB2B763d22820cB295"
+    },
+    {
+      "ticker": "GOOGL",
+      "token": "0xB2000000000000000000002bdc5D605a706B49F7",
+      "feed": "0x49985d67a3fe0700481f9FC19ab824CfdADd8F75",
+      "feedId": 2,
+      "mainnetToken": "0xb2000000000000000000002D0BA3164cc74f58B7",
+      "mainnetFeed": "0x5bF49E0ffA937CE2FfF033c739aD7C634c4D34F2"
+    },
+    {
+      "ticker": "META",
+      "token": "0xb200000000000000000000FD2893c6d97D29321E",
+      "feed": "0x409E7e8E33455e7Cd4945dDd073200ccFD156992",
+      "feedId": 3,
+      "mainnetToken": "0xb2000000000000000000008bC8786B856E61707C",
+      "mainnetFeed": "0x6526aE6797A76123638b863AeE4dD27Ba4E4b27D"
+    },
+    {
+      "ticker": "MSFT",
+      "token": "0xB20000000000000000000021ceE632403E68f510",
+      "feed": "0x4067968ff6222CD4a67F11a81CAc9C8D56e66E60",
+      "feedId": 4,
+      "mainnetToken": "0xB200000000000000000000Ab99cFa739E253872B",
+      "mainnetFeed": "0xeB10A6c9aa7E537aEd766C08c35Dae35B321b18c"
+    },
+    {
+      "ticker": "MSTR",
+      "token": "0xB20000000000000000000011e9eDc311b3557A24",
+      "feed": "0x01C63e24270D28D29d52AF294Ce82Ea0fF8B13B5",
+      "feedId": 5,
+      "mainnetToken": "0xb2000000000000000000004884b426556b92883d",
+      "mainnetFeed": "0xB3cE282CD188b35DA0E38D8Bc7d58e33173D202a"
+    },
+    {
+      "ticker": "NVDA",
+      "token": "0xb200000000000000000000A9e9969Eb6B958f57F",
+      "feed": "0xFb0B78727505e52fC6FA5343717bBd1aA203AcC6",
+      "feedId": 6,
+      "mainnetToken": "0xb20000000000000000000078ee7ce2fE4908108C",
+      "mainnetFeed": "0x04689a41629776563E6822F76f2e57D148d28513"
+    },
+    {
+      "ticker": "SNDK",
+      "token": "0xb200000000000000000000995283CB2bdE1bAFcA",
+      "feed": "0xdacD785455D171C341247A072d8dD5B20E02fB11",
+      "feedId": 7,
+      "mainnetToken": "0xb200000000000000000000397293Cb8cda9a10c5",
+      "mainnetFeed": "0x388b0dC46C0Fb05A74BeE0994fa5b02c6Fcca2eA"
+    },
+    {
+      "ticker": "SPCX",
+      "token": "0xb2000000000000000000004481A4f760a3BD2cb7",
+      "feed": "0xcAB88Ab6e7e98CcCAFb755bBCE395c19Ec0E903b",
+      "feedId": 8,
+      "mainnetToken": "0xb2000000000000000000007b9fcbd005511aCBd5",
+      "mainnetFeed": "0x6A634B235903C4ad6376892180d6fF8612e3Fa68"
+    },
+    {
+      "ticker": "TSLA",
+      "token": "0xb200000000000000000000166b22Bb06299e16d5",
+      "feed": "0x5276c0762F693C376f2f4a1F639CA1b3a6Ae65DA",
+      "feedId": 9,
+      "mainnetToken": "0xb2000000000000000000001e800a7f5189430cD0",
+      "mainnetFeed": "0xFaf869185383a24F8cb00e27BdA6b63B9905DCb4"
+    }
+  ],
+  "demoVaults": [
+    {
+      "name": "Steady Megacaps",
+      "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
+      "profile": "steady"
+    },
+    {
+      "name": "Balanced Ten",
+      "vault": "0xD3968A5043a56b20039132384467460D4e5cCF9C",
+      "profile": "balanced"
+    },
+    {
+      "name": "Momentum Hunter",
+      "vault": "0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518",
+      "profile": "momentum"
+    }
+  ]
+}
