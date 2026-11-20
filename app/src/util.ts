@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const fmtUsd = (x: number, digits = 2) =>
   `$${x.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
@@ -23,27 +23,33 @@ export function duration(s: number): string {
 }
 
 export function useAsync<T>(fn: () => Promise<T>, deps: unknown[], pollMs?: number) {
-  const [data, setData] = useState<T | undefined>();
-  const [error, setError] = useState<string | undefined>();
+  // Results are tagged with the deps they belong to, so a different subject (e.g. another vault) is never
+  // rendered with the previous subject's data, not even for one frame.
+  const depsKey = JSON.stringify(deps, (_, v) => (typeof v === "bigint" ? v.toString() : v));
+  const [state, setState] = useState<{ key: string; data?: T; error?: string }>({ key: depsKey });
   const [loading, setLoading] = useState(true);
   const [tick, setTick] = useState(0);
-  const alive = useRef(true);
   useEffect(() => {
-    alive.current = true;
+    let alive = true;
     setLoading(true);
     fn()
-      .then((d) => alive.current && (setData(d), setError(undefined)))
-      .catch((e) => alive.current && setError(e?.shortMessage ?? e?.message ?? String(e)))
-      .finally(() => alive.current && setLoading(false));
+      .then((d) => alive && setState({ key: depsKey, data: d }))
+      .catch((e) => {
+        if (!alive) return;
+        const msg = e?.shortMessage ?? e?.message ?? String(e);
+        setState((s) => ({ key: depsKey, data: s.key === depsKey ? s.data : undefined, error: msg }));
+      })
+      .finally(() => alive && setLoading(false));
     return () => {
-      alive.current = false;
+      alive = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [...deps, tick]);
+  }, [depsKey, tick]);
   useEffect(() => {
     if (!pollMs) return;
     const id = setInterval(() => setTick((t) => t + 1), pollMs);
     return () => clearInterval(id);
   }, [pollMs]);
-  return { data, error, loading, reload: () => setTick((t) => t + 1) };
+  const fresh = state.key === depsKey;
+  return { data: fresh ? state.data : undefined, error: fresh ? state.error : undefined, loading, reload: () => setTick((t) => t + 1) };
 }
