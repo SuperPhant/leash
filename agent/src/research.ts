@@ -178,6 +178,17 @@ export async function research(
       mdd = Math.min(mdd, p / peak - 1);
     }
     const rec = api.find((x) => x.contract_address.toLowerCase() === s.mainnetToken.toLowerCase());
+    let onchainMultiplier: number | null = null;
+    try {
+      const m = (await client.readContract({
+        address: s.mainnetToken,
+        abi: [{ type: "function", name: "uiMultiplier", stateMutability: "view", inputs: [], outputs: [{ type: "uint256" }] }],
+        functionName: "uiMultiplier",
+      })) as bigint;
+      onchainMultiplier = Number(m) / 1e18;
+    } catch {
+      onchainMultiplier = null;
+    }
     const supply = rec?.total_supply ?? null;
     const hist = (supplyHist[s.ticker] ??= {});
     if (supply !== null) hist[dayKey(now)] = supply;
@@ -195,7 +206,7 @@ export async function research(
       maxDrawdown20d: window.length >= 5 ? mdd : null,
       supply,
       supplyChange7d: supply !== null && weekAgo ? supply / weekAgo - 1 : null,
-      multiplier: rec?.multiplier ?? null,
+      multiplier: onchainMultiplier ?? rec?.multiplier ?? null,
       closes: series.length,
     };
   });

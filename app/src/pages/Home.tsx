@@ -59,6 +59,7 @@ function Market() {
   const sig = new Map((status?.latest.research?.signals ?? []).map((s) => [s.ticker, s]));
   return (
     <Card
+      className="market"
       title="Live market: Coinbase tokenized stocks on Base mainnet"
       extra={<span className="muted small">Chainlink total-return feeds, read directly from Base mainnet</span>}
     >
