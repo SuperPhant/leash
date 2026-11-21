@@ -2,10 +2,9 @@ name: agent
 
 # The Leash research agent: mirrors Base mainnet tokenized-stock prices to the testnet, researches, and rebalances
 # every vault delegated to it inside its onchain mandate. Rationale documents are published to the `notes` branch.
+# Runs every 2 hours at :23 UTC around US market hours on weekdays, plus a daily off-hours run at 03:41 UTC for the
+# price relay and status; tick.yml dispatches it on that schedule.
 on:
-  schedule:
-    - cron: "23 13-21/2 * * 1-5" # every 2 hours around US market hours, weekdays
-    - cron: "41 3 * * *" # daily off-hours run: price relay + status
   workflow_dispatch:
     inputs:
       dry_run:

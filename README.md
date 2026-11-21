@@ -111,7 +111,8 @@ flow from the app. The deployment script (`agent/src/deploy.ts`) targets either;
 ### The agent (`agent/`)
 
 TypeScript + viem, run by [`.github/workflows/agent.yml`](.github/workflows/agent.yml) every two hours around US market
-hours, once per chain (Base Sepolia, then Base Vibenet). Each cycle:
+hours ([`tick.yml`](.github/workflows/tick.yml) starts it on that schedule, because GitHub's own cron trigger ran hours
+late here), once per chain (Base Sepolia, then Base Vibenet). Each cycle:
 
 1. mirrors new mainnet Chainlink rounds and B20 multipliers to the testnet;
 2. builds signals only from onchain and issuer data: 1/5/20-day total returns, 20-day volatility and drawdown from
