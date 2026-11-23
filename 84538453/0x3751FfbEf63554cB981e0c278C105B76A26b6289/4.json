@@ -1,0 +1,159 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84538453,
+  "vault": "0x3751FfbEf63554cB981e0c278C105B76A26b6289",
+  "epoch": 4,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-23T20:17:00.652Z",
+  "profile": {
+    "id": "momentum",
+    "name": "Momentum Hunter",
+    "style": "Aggressive. Concentrate in the strongest recent performers among the ten names and rotate out of laggards quickly, within the caps."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "25.0%",
+      "MSFT": "25.0%",
+      "NVDA": "20.0%",
+      "GOOGL": "20.0%",
+      "TSLA": "15.0%"
+    },
+    "minCash": "10.0%",
+    "maxTurnoverPerWindow": "35% per 24h",
+    "maxSlippage": "0.4%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "4h",
+    "expiry": "2027-02-18T15:59:29.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-23T20:15:17.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 350.4903,
+        "oracleAgeHours": 0.72,
+        "ret1d": 0.0057744138328179595,
+        "ret5d": -0.01938813194615263,
+        "ret20d": 0.009098749438664289,
+        "vol20d": 0.30694436951621096,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5901.22211128,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 283.5932,
+        "oracleAgeHours": 1.6,
+        "ret1d": 0.03694691195700539,
+        "ret5d": -0.038312470304852075,
+        "ret20d": -0.11900736680769097,
+        "vol20d": 0.43708858369089704,
+        "maxDrawdown20d": -0.17742063297525001,
+        "onchainSupply": 36589.5506636,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "MSFT",
+        "price": 496.7679,
+        "oracleAgeHours": 2.56,
+        "ret1d": -0.0060791056534406085,
+        "ret5d": -0.05426275604664643,
+        "ret20d": -0.05493502591058985,
+        "vol20d": 0.42555237363810006,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2774.70741505,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 165.524,
+        "oracleAgeHours": 0.03,
+        "ret1d": 0.12997804043684247,
+        "ret5d": 0.017829786455975105,
+        "ret20d": -0.21719256819846022,
+        "vol20d": 0.6909758064693339,
+        "maxDrawdown20d": -0.4226756504580954,
+        "onchainSupply": 66546.30275716,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      },
+      {
+        "ticker": "TSLA",
+        "price": 386.8408,
+        "oracleAgeHours": 0.65,
+        "ret1d": 0.03146351849279294,
+        "ret5d": -0.007450265494445718,
+        "ret20d": 0.0410700252973788,
+        "vol20d": 0.6690528633796641,
+        "maxDrawdown20d": -0.15686896967418273,
+        "onchainSupply": 6426.03995169,
+        "supplyChange7d": null,
+        "multiplier": 1
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-oss-20b",
+    "summary": "Aggressive momentum tilt: overweight NVDA and TSLA, moderate GOOGL, small AAPL, keep MSFT minimal. 10% cash retained.",
+    "perAsset": {
+      "NVDA": "High 1‑day gain, 20% cap reached.",
+      "TSLA": "Solid 1‑day momentum, 15% cap.",
+      "GOOGL": "Strong 1‑day return but weak 20‑day, 20% cap.",
+      "AAPL": "Modest 1‑day gain, 15% cap.",
+      "MSFT": "Negative recent trend, 20% cap.",
+      "CASH": "10% of NAV."
+    },
+    "risks": [
+      "High volatility of NVDA and TSLA may amplify drawdowns",
+      "Short‑term momentum may reverse before 20‑day trend stabilizes",
+      "Market closure or corporate actions could affect oracle data"
+    ],
+    "current": {
+      "AAPL": "19.3%",
+      "MSFT": "18.8%",
+      "NVDA": "8.6%",
+      "GOOGL": "15.5%",
+      "TSLA": "8.0%"
+    },
+    "baseline": {
+      "TSLA": "14.7%"
+    },
+    "proposed": {
+      "NVDA": "20.0%",
+      "TSLA": "15.0%",
+      "GOOGL": "20.0%",
+      "AAPL": "15.0%",
+      "MSFT": "20.0%"
+    },
+    "final": {
+      "NVDA": "19.6%",
+      "TSLA": "14.6%",
+      "GOOGL": "19.6%",
+      "AAPL": "15.3%",
+      "MSFT": "20.4%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [
+    "NVDA: 20.0% exceeds cap 20.0%, clipped",
+    "TSLA: 15.0% exceeds cap 15.0%, clipped",
+    "GOOGL: 20.0% exceeds cap 20.0%, clipped",
+    "total exposure 90.0% above 89.5% (cash floor 10.0%), scaled down",
+    "turnover budget $44.6 < desired $1,413.03: trades scaled to 3.2%"
+  ],
+  "trades": [
+    {
+      "ticker": "AAPL",
+      "side": "sell",
+      "amountIn": "1880454",
+      "minAmountOut": "6564444",
+      "notionalUsd": 6.590808
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
