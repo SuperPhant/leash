@@ -1,0 +1,203 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84532,
+  "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
+  "epoch": 8,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-25T04:20:02.758Z",
+  "profile": {
+    "id": "steady",
+    "name": "Steady Megacaps",
+    "style": "Capital preservation. Hold a diversified core of the six largest US megacaps, prefer lower volatility, trade rarely and only when weights drift or risk rises."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "20.0%",
+      "MSFT": "20.0%",
+      "GOOGL": "20.0%",
+      "AMZN": "20.0%",
+      "META": "20.0%",
+      "NVDA": "20.0%"
+    },
+    "minCash": "20.0%",
+    "maxTurnoverPerWindow": "25% per 24h",
+    "maxSlippage": "0.3%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "6h",
+    "expiry": "2027-11-20T20:58:47.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-25T04:19:54.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 354.5023,
+        "oracleAgeHours": 7.3,
+        "ret1d": 0.011446840697642902,
+        "ret5d": 0.011742870397529748,
+        "ret20d": 0.020804113223574783,
+        "vol20d": 0.31610888674374016,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5840.25261979,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 251.1,
+        "oracleAgeHours": 4.09,
+        "ret1d": -0.016083180312889578,
+        "ret5d": -0.024473629513654838,
+        "ret20d": -0.012531141055463046,
+        "vol20d": 0.6001891362143963,
+        "maxDrawdown20d": -0.10313760266471084,
+        "onchainSupply": 9903.50295316,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 277.5164,
+        "oracleAgeHours": 1.96,
+        "ret1d": -0.016202072873083284,
+        "ret5d": -0.005737440977716779,
+        "ret20d": -0.13511510088216372,
+        "vol20d": 0.5055103136865885,
+        "maxDrawdown20d": -0.17477786437398357,
+        "onchainSupply": 36937.41947585,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 586.2917,
+        "oracleAgeHours": 3.19,
+        "ret1d": -0.021025987727018802,
+        "ret5d": -0.05064150859673422,
+        "ret20d": -0.05305797484633745,
+        "vol20d": 0.47795012413023313,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9154.47074238,
+        "supplyChange7d": null,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 493.1535,
+        "oracleAgeHours": 1.95,
+        "ret1d": 0.0004839108568412964,
+        "ret5d": -0.021787653328704915,
+        "ret20d": -0.07254898741842675,
+        "vol20d": 0.4334403516366866,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2473.66012854,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 152.0364,
+        "oracleAgeHours": 1.09,
+        "ret1d": -0.07586716654648185,
+        "ret5d": -0.02084119839411902,
+        "ret20d": -0.3016049502492205,
+        "vol20d": 1.2562547758586489,
+        "maxDrawdown20d": -0.4226756504580954,
+        "onchainSupply": 69082.93820108,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-oss-20b",
+    "summary": "Adjust AAPL to cap 20% to offset drift; keep other megacaps near baseline; maintain 20%+ cash.",
+    "perAsset": {
+      "AAPL": "Increase to 20% to counter drift and positive 1‑day return.",
+      "AMZN": "Maintain 12.1% as slight underperformance but within cap.",
+      "GOOGL": "Keep 12.4% despite negative 20‑day return; volatility high but within cap.",
+      "META": "Hold 14.1%; moderate negative momentum but within cap.",
+      "MSFT": "Maintain 15.5%; stable 1‑day return, high cap.",
+      "NVDA": "Keep 4.2%; high volatility and negative momentum, cap reached."
+    },
+    "risks": [
+      "High volatility of NVDA may erode NAV; AAPL overweight may reduce diversification; market downturn could force cash reallocation."
+    ],
+    "current": {
+      "AAPL": "17.9%",
+      "MSFT": "14.4%",
+      "GOOGL": "11.9%",
+      "AMZN": "11.9%",
+      "META": "13.0%",
+      "NVDA": "3.7%"
+    },
+    "baseline": {
+      "AAPL": "19.7%",
+      "MSFT": "15.5%",
+      "GOOGL": "12.4%",
+      "AMZN": "12.1%",
+      "META": "14.1%",
+      "NVDA": "4.2%"
+    },
+    "proposed": {
+      "AAPL": "20.0%",
+      "AMZN": "12.1%",
+      "GOOGL": "12.4%",
+      "META": "14.1%",
+      "MSFT": "15.5%",
+      "NVDA": "4.2%"
+    },
+    "final": {
+      "AAPL": "19.7%",
+      "AMZN": "12.2%",
+      "GOOGL": "12.5%",
+      "META": "14.2%",
+      "MSFT": "15.6%",
+      "NVDA": "4.2%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [
+    "AAPL: 20.0% exceeds cap 20.0%, clipped"
+  ],
+  "trades": [
+    {
+      "ticker": "AAPL",
+      "side": "buy",
+      "amountIn": "1782946372",
+      "minAmountOut": "501434695",
+      "notionalUsd": 1782.946372
+    },
+    {
+      "ticker": "MSFT",
+      "side": "buy",
+      "amountIn": "1144875949",
+      "minAmountOut": "231457599",
+      "notionalUsd": 1144.875949
+    },
+    {
+      "ticker": "GOOGL",
+      "side": "buy",
+      "amountIn": "558768758",
+      "minAmountOut": "200742137",
+      "notionalUsd": 558.768758
+    },
+    {
+      "ticker": "META",
+      "side": "buy",
+      "amountIn": "1178145265",
+      "minAmountOut": "200345791",
+      "notionalUsd": 1178.145265
+    },
+    {
+      "ticker": "NVDA",
+      "side": "buy",
+      "amountIn": "550436583",
+      "minAmountOut": "360956402",
+      "notionalUsd": 550.436583
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
