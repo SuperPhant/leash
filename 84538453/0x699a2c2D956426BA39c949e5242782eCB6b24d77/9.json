@@ -1,0 +1,200 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84538453,
+  "vault": "0x699a2c2D956426BA39c949e5242782eCB6b24d77",
+  "epoch": 9,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-25T14:24:33.261Z",
+  "profile": {
+    "id": "steady",
+    "name": "Steady Megacaps",
+    "style": "Capital preservation. Hold a diversified core of the six largest US megacaps, prefer lower volatility, trade rarely and only when weights drift or risk rises."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "20.0%",
+      "MSFT": "20.0%",
+      "GOOGL": "20.0%",
+      "AMZN": "20.0%",
+      "META": "20.0%",
+      "NVDA": "20.0%"
+    },
+    "minCash": "20.0%",
+    "maxTurnoverPerWindow": "25% per 24h",
+    "maxSlippage": "0.3%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "6h",
+    "expiry": "2027-11-20T15:23:30.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-25T14:24:22.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 352.6914,
+        "oracleAgeHours": 0.43,
+        "ret1d": 0.006280062239944373,
+        "ret5d": 0.006574579729980323,
+        "ret20d": 0.015589534968433183,
+        "vol20d": 0.31610888674374016,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5840.25261979,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 242.961,
+        "oracleAgeHours": 0.38,
+        "ret1d": -0.04797525118279544,
+        "ret5d": -0.0560937375558227,
+        "ret20d": -0.044538345527583956,
+        "vol20d": 0.6001891362143963,
+        "maxDrawdown20d": -0.10498415972887343,
+        "onchainSupply": 11204.50295316,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 264.2486,
+        "oracleAgeHours": 0.14,
+        "ret1d": -0.06323664224479242,
+        "ret5d": -0.053272315789456126,
+        "ret20d": -0.17646453623308178,
+        "vol20d": 0.5055103136865885,
+        "maxDrawdown20d": -0.17646453623308178,
+        "onchainSupply": 38307.90264098,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 577.6072,
+        "oracleAgeHours": 1.15,
+        "ret1d": -0.03552721245617996,
+        "ret5d": -0.06470404821452469,
+        "ret20d": -0.0670847201328213,
+        "vol20d": 0.47795012413023313,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9231.44658795,
+        "supplyChange7d": null,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 480.464,
+        "oracleAgeHours": 2.22,
+        "ret1d": -0.025259933254212275,
+        "ret5d": -0.04695841908209564,
+        "ret20d": -0.09641359336505373,
+        "vol20d": 0.4334403516366866,
+        "maxDrawdown20d": -0.13703233537849246,
+        "onchainSupply": 2576.66012854,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 146.7239,
+        "oracleAgeHours": 0.21,
+        "ret1d": -0.10815881580984266,
+        "ret5d": -0.055055600750574474,
+        "ret20d": -0.32600872336216224,
+        "vol20d": 1.2562547758586489,
+        "maxDrawdown20d": -0.4226756504580954,
+        "onchainSupply": 70094.39409888,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-oss-20b",
+    "summary": "Rebalanced to lower volatility and modest momentum: AAPL and MSFT at cap, AMZN, GOOGL, META trimmed, NVDA modestly increased to maintain 80% equity exposure.",
+    "perAsset": {
+      "AAPL": "Increase to cap due to low vol and positive 20‑day return.",
+      "AMZN": "Reduce to 13% as high vol and negative 20‑day trend.",
+      "GOOGL": "Trim to 10% given steep 20‑day decline and high vol.",
+      "META": "Hold at 12% after moderate decline and vol.",
+      "MSFT": "Cap at 20% to support core stability despite negative trend.",
+      "NVDA": "Raise to 5% to keep exposure while limiting high vol and large drawdown."
+    },
+    "risks": [
+      "High volatility of NVDA may spike risk;",
+      "Negative momentum in AMZN, GOOGL, META could erode value;",
+      "Cap limits constrain flexibility to adjust further."
+    ],
+    "current": {
+      "AAPL": "19.9%",
+      "MSFT": "16.9%",
+      "GOOGL": "11.3%",
+      "AMZN": "14.8%",
+      "META": "11.7%",
+      "NVDA": "3.9%"
+    },
+    "baseline": {
+      "AAPL": "19.7%",
+      "MSFT": "15.6%",
+      "GOOGL": "11.8%",
+      "AMZN": "12.0%",
+      "META": "14.5%",
+      "NVDA": "4.4%"
+    },
+    "proposed": {
+      "AAPL": "20.0%",
+      "AMZN": "13.0%",
+      "GOOGL": "10.0%",
+      "META": "12.0%",
+      "MSFT": "20.0%",
+      "NVDA": "5.0%"
+    },
+    "final": {
+      "AAPL": "19.6%",
+      "AMZN": "13.1%",
+      "GOOGL": "10.1%",
+      "META": "12.1%",
+      "MSFT": "19.6%",
+      "NVDA": "5.0%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [
+    "AAPL: 20.0% exceeds cap 20.0%, clipped",
+    "MSFT: 20.0% exceeds cap 20.0%, clipped",
+    "total exposure 80.0% above 79.5% (cash floor 20.0%), scaled down"
+  ],
+  "trades": [
+    {
+      "ticker": "GOOGL",
+      "side": "sell",
+      "amountIn": "457437502",
+      "minAmountOut": "1205145948",
+      "notionalUsd": 1208.772265
+    },
+    {
+      "ticker": "AMZN",
+      "side": "sell",
+      "amountIn": "669525227",
+      "minAmountOut": "1621805130",
+      "notionalUsd": 1626.685186
+    },
+    {
+      "ticker": "MSFT",
+      "side": "buy",
+      "amountIn": "2664418105",
+      "minAmountOut": "552887385",
+      "notionalUsd": 2664.418105
+    },
+    {
+      "ticker": "NVDA",
+      "side": "buy",
+      "amountIn": "1090636273",
+      "minAmountOut": "741095667",
+      "notionalUsd": 1090.636273
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
