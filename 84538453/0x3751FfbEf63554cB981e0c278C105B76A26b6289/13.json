@@ -1,0 +1,157 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84538453,
+  "vault": "0x3751FfbEf63554cB981e0c278C105B76A26b6289",
+  "epoch": 13,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-26T19:35:07.613Z",
+  "profile": {
+    "id": "momentum",
+    "name": "Momentum Hunter",
+    "style": "Aggressive. Concentrate in the strongest recent performers among the ten names and rotate out of laggards quickly, within the caps."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "25.0%",
+      "MSFT": "25.0%",
+      "NVDA": "20.0%",
+      "GOOGL": "20.0%",
+      "TSLA": "15.0%"
+    },
+    "minCash": "10.0%",
+    "maxTurnoverPerWindow": "35% per 24h",
+    "maxSlippage": "0.4%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "4h",
+    "expiry": "2027-02-18T15:59:29.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-26T19:31:10.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 355.0836,
+        "oracleAgeHours": 22.37,
+        "ret1d": 0.006954079232335708,
+        "ret5d": 0.006368740446028642,
+        "ret20d": 0.02793468842094282,
+        "vol20d": 0.3176859810757562,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5842.25161951,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 274.3494,
+        "oracleAgeHours": 19.81,
+        "ret1d": -0.016399292848825575,
+        "ret5d": -0.030907179524947037,
+        "ret20d": -0.07522719225820229,
+        "vol20d": 0.43421043689452293,
+        "maxDrawdown20d": -0.11733958031951508,
+        "onchainSupply": 38306.90301794,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "MSFT",
+        "price": 490.829,
+        "oracleAgeHours": 24.76,
+        "ret1d": -0.00826598236095255,
+        "ret5d": -0.0350463132709663,
+        "ret20d": -0.10158878333607901,
+        "vol20d": 0.4181569367051333,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2589.72338925,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 151.5305,
+        "oracleAgeHours": 19.22,
+        "ret1d": -0.02474064817836974,
+        "ret5d": 0.0011336781964645937,
+        "ret20d": -0.2887212137217334,
+        "vol20d": 1.2591577727466172,
+        "maxDrawdown20d": -0.4100620899554981,
+        "onchainSupply": 70911.95430075,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      },
+      {
+        "ticker": "TSLA",
+        "price": 381.825,
+        "oracleAgeHours": 19.27,
+        "ret1d": -0.008925703495332837,
+        "ret5d": -0.006005101114396338,
+        "ret20d": -0.05443221354501393,
+        "vol20d": 0.740682082692225,
+        "maxDrawdown20d": -0.1492345314978576,
+        "onchainSupply": 6449.4246083,
+        "supplyChange7d": null,
+        "multiplier": 1
+      }
+    ]
+  },
+  "decision": {
+    "source": "rules:inverse-vol+momentum",
+    "summary": "Rules-based rebalance toward an inverse-volatility allocation with a momentum momentum tilt.",
+    "perAsset": {},
+    "risks": [],
+    "current": {
+      "AAPL": "24.1%",
+      "MSFT": "12.2%",
+      "NVDA": "12.6%",
+      "GOOGL": "12.4%",
+      "TSLA": "11.2%"
+    },
+    "baseline": {
+      "AAPL": "24.7%"
+    },
+    "proposed": {
+      "AAPL": "24.7%"
+    },
+    "final": {
+      "AAPL": "24.7%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [
+    "turnover budget $34.8 < desired $2,457.16: trades scaled to 1.4%"
+  ],
+  "trades": [
+    {
+      "ticker": "MSFT",
+      "side": "sell",
+      "amountIn": "1781369",
+      "minAmountOut": "8708501",
+      "notionalUsd": 8.743475
+    },
+    {
+      "ticker": "NVDA",
+      "side": "sell",
+      "amountIn": "5980094",
+      "minAmountOut": "9025417",
+      "notionalUsd": 9.061664
+    },
+    {
+      "ticker": "GOOGL",
+      "side": "sell",
+      "amountIn": "3258224",
+      "minAmountOut": "8903162",
+      "notionalUsd": 8.938918
+    },
+    {
+      "ticker": "TSLA",
+      "side": "sell",
+      "amountIn": "2108769",
+      "minAmountOut": "8019599",
+      "notionalUsd": 8.051807
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
