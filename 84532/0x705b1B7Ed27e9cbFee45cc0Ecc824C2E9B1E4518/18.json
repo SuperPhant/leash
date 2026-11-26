@@ -1,0 +1,246 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84532,
+  "vault": "0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518",
+  "epoch": 18,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-26T21:29:55.456Z",
+  "profile": {
+    "id": "momentum",
+    "name": "Momentum Hunter",
+    "style": "Aggressive. Concentrate in the strongest recent performers among the ten names and rotate out of laggards quickly, within the caps."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "30.0%",
+      "AMZN": "30.0%",
+      "GOOGL": "30.0%",
+      "META": "30.0%",
+      "MSFT": "30.0%",
+      "MSTR": "30.0%",
+      "NVDA": "30.0%",
+      "SNDK": "30.0%",
+      "SPCX": "30.0%",
+      "TSLA": "30.0%"
+    },
+    "minCash": "5.0%",
+    "maxTurnoverPerWindow": "60% per 24h",
+    "maxSlippage": "0.5%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "2h",
+    "expiry": "2027-11-20T20:58:47.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-26T21:27:26.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 355.0836,
+        "oracleAgeHours": 24.31,
+        "ret1d": -0.005114505207008624,
+        "ret5d": 0.018955437587852897,
+        "ret20d": 0.011386934931575166,
+        "vol20d": 0.3136925608794208,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5842.25161951,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 247.16,
+        "oracleAgeHours": 21.07,
+        "ret1d": 0.01057968496049222,
+        "ret5d": -0.04231431665701202,
+        "ret20d": 0.08374989037972469,
+        "vol20d": 0.47155376482319183,
+        "maxDrawdown20d": -0.09904774184041842,
+        "onchainSupply": 11414.50295316,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 274.3494,
+        "oracleAgeHours": 21.75,
+        "ret1d": 0.005024278517045788,
+        "ret5d": 0.0031475700042762345,
+        "ret20d": -0.02575178957622315,
+        "vol20d": 0.39621526427741277,
+        "maxDrawdown20d": -0.11733958031951508,
+        "onchainSupply": 38306.90301794,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 611.7419,
+        "oracleAgeHours": 21.18,
+        "ret1d": 0.005353088049814048,
+        "ret5d": 0.02347182126826719,
+        "ret20d": -0.011899857007578896,
+        "vol20d": 0.492925713485363,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9250.44062776,
+        "supplyChange7d": null,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 490.829,
+        "oracleAgeHours": 26.7,
+        "ret1d": 0,
+        "ret5d": -0.01796146006577548,
+        "ret20d": -0.07402512850726695,
+        "vol20d": 0.4079600378861939,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2589.72338925,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "MSTR",
+        "price": 82.1,
+        "oracleAgeHours": 20.66,
+        "ret1d": 0.03024218848036142,
+        "ret5d": -0.048777661916348136,
+        "ret20d": -0.4050293499528952,
+        "vol20d": 0.8411348625502837,
+        "maxDrawdown20d": -0.4568682993102704,
+        "onchainSupply": 22149.97804302,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 151.5305,
+        "oracleAgeHours": 21.16,
+        "ret1d": 0.016279366330952394,
+        "ret5d": 0.03444884243991386,
+        "ret20d": -0.2821811977145787,
+        "vol20d": 1.2646642950043026,
+        "maxDrawdown20d": -0.4046377704771873,
+        "onchainSupply": 70911.95430075,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      },
+      {
+        "ticker": "SNDK",
+        "price": 612.696,
+        "oracleAgeHours": 20.67,
+        "ret1d": 0.03867905336678645,
+        "ret5d": -0.19365235621662946,
+        "ret20d": -0.5311675740613917,
+        "vol20d": 1.4566118602313685,
+        "maxDrawdown20d": -0.5486262821812673,
+        "onchainSupply": 3543.53853669,
+        "supplyChange7d": null,
+        "multiplier": 8
+      },
+      {
+        "ticker": "SPCX",
+        "price": 129.185,
+        "oracleAgeHours": 20.56,
+        "ret1d": 0.0175652790358789,
+        "ret5d": -0.06055813107899277,
+        "ret20d": -0.08925748947096068,
+        "vol20d": 0.714035703876581,
+        "maxDrawdown20d": -0.1299178404295369,
+        "onchainSupply": 31741.36553606,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "TSLA",
+        "price": 381.825,
+        "oracleAgeHours": 21.21,
+        "ret1d": -0.0003076379297931586,
+        "ret5d": 0.018089503352569425,
+        "ret20d": -0.043165016915173604,
+        "vol20d": 0.7399416933426214,
+        "maxDrawdown20d": -0.14617916790933505,
+        "onchainSupply": 6449.4246083,
+        "supplyChange7d": null,
+        "multiplier": 1
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-oss-20b",
+    "summary": "Shift focus to AMZN’s strong 20‑day momentum, add NVDA for short‑term upside, trim AAPL and META to moderate levels, and keep cash at 5%.",
+    "perAsset": {
+      "AAPL": "Reduce from 29.7% to 20% due to modest 20‑day return and high volatility.",
+      "AMZN": "Increase to 30% (cap) reflecting 8.4% 20‑day gain and solid 5‑day trend.",
+      "META": "Lower to 20% as 20‑day return is negative and volatility high.",
+      "NVDA": "Raise to 25% to capture 1.6% 1‑day gain despite negative 20‑day trend.",
+      "MSFT": "0% (stale oracle).",
+      "MSTR": "0% (negative 20‑day and high volatility).",
+      "SNDK": "0% (negative 20‑day and high volatility).",
+      "SPCX": "0% (negative 20‑day).",
+      "TSLA": "0% (negative 20‑day)."
+    },
+    "risks": [
+      "High concentration in AMZN may expose to sector risk.",
+      "NVDA’s negative 20‑day trend could drag portfolio if trend reverses.",
+      "Volatility of selected stocks may increase portfolio risk."
+    ],
+    "current": {
+      "AAPL": "29.4%",
+      "AMZN": "0.0%",
+      "GOOGL": "0.0%",
+      "META": "14.5%",
+      "MSFT": "0.0%",
+      "MSTR": "0.0%",
+      "NVDA": "0.0%",
+      "SNDK": "0.0%",
+      "SPCX": "14.5%",
+      "TSLA": "0.0%"
+    },
+    "baseline": {
+      "AMZN": "29.7%",
+      "AAPL": "29.7%",
+      "META": "29.7%",
+      "MSFT": "0.0%"
+    },
+    "proposed": {
+      "AAPL": "20.0%",
+      "AMZN": "30.0%",
+      "META": "20.0%",
+      "NVDA": "25.0%"
+    },
+    "final": {
+      "AAPL": "20.0%",
+      "AMZN": "29.5%",
+      "META": "20.0%",
+      "NVDA": "25.0%",
+      "MSFT": "0.0%"
+    },
+    "frozen": [
+      "MSFT"
+    ]
+  },
+  "leashCorrections": [
+    "AMZN: 30.0% exceeds cap 30.0%, clipped",
+    "total exposure 95.0% above 94.5% (cash floor 5.0%), scaled down",
+    "turnover budget $25.55 < desired $83,920.64: trades scaled to 0.0%"
+  ],
+  "trades": [
+    {
+      "ticker": "AAPL",
+      "side": "sell",
+      "amountIn": "810286",
+      "minAmountOut": "2862806",
+      "notionalUsd": 2.877192
+    },
+    {
+      "ticker": "SPCX",
+      "side": "sell",
+      "amountIn": "3403825",
+      "minAmountOut": "4375244",
+      "notionalUsd": 4.397231
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
