@@ -1,0 +1,189 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84532,
+  "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
+  "epoch": 12,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-26T13:26:07.891Z",
+  "profile": {
+    "id": "steady",
+    "name": "Steady Megacaps",
+    "style": "Capital preservation. Hold a diversified core of the six largest US megacaps, prefer lower volatility, trade rarely and only when weights drift or risk rises."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "20.0%",
+      "MSFT": "20.0%",
+      "GOOGL": "20.0%",
+      "AMZN": "20.0%",
+      "META": "20.0%",
+      "NVDA": "20.0%"
+    },
+    "minCash": "20.0%",
+    "maxTurnoverPerWindow": "25% per 24h",
+    "maxSlippage": "0.3%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "6h",
+    "expiry": "2027-11-20T20:58:47.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-26T13:25:59.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 355.0836,
+        "oracleAgeHours": 16.29,
+        "ret1d": 0.006954079232335708,
+        "ret5d": 0.006368740446028642,
+        "ret20d": 0.02793468842094282,
+        "vol20d": 0.3176859810757562,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5842.25161951,
+        "supplyChange7d": null,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 247.16,
+        "oracleAgeHours": 13.04,
+        "ret1d": -0.020704438250216506,
+        "ret5d": -0.07426897737359961,
+        "ret20d": -0.024913699575895065,
+        "vol20d": 0.6102428282725266,
+        "maxDrawdown20d": -0.1002662984515238,
+        "onchainSupply": 11414.50295316,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 274.3494,
+        "oracleAgeHours": 13.72,
+        "ret1d": -0.016399292848825575,
+        "ret5d": -0.030907179524947037,
+        "ret20d": -0.07522719225820229,
+        "vol20d": 0.43421043689452293,
+        "maxDrawdown20d": -0.11733958031951508,
+        "onchainSupply": 38306.90301794,
+        "supplyChange7d": null,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 611.7419,
+        "oracleAgeHours": 13.16,
+        "ret1d": 0.03803369548533109,
+        "ret5d": -0.011024997272828019,
+        "ret20d": -0.006054203411037462,
+        "vol20d": 0.49301914377328543,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9250.44062776,
+        "supplyChange7d": null,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 490.829,
+        "oracleAgeHours": 18.68,
+        "ret1d": -0.00826598236095255,
+        "ret5d": -0.0350463132709663,
+        "ret20d": -0.10158878333607901,
+        "vol20d": 0.4181569367051333,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2589.72338925,
+        "supplyChange7d": null,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 151.5305,
+        "oracleAgeHours": 13.13,
+        "ret1d": -0.02474064817836974,
+        "ret5d": 0.0011336781964645937,
+        "ret20d": -0.2887212137217334,
+        "vol20d": 1.2591577727466172,
+        "maxDrawdown20d": -0.4100620899554981,
+        "onchainSupply": 70911.95430075,
+        "supplyChange7d": null,
+        "multiplier": 1.0005379395763696
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-oss-20b",
+    "summary": "Maintain core megacap exposure, modestly increase MSFT to 18.5% to offset slight drift, keep NVDA at 4% due to high volatility, preserve 20% cash.",
+    "perAsset": {
+      "AAPL": "Stable, near cap, low volatility.",
+      "AMZN": "Below cap, negative momentum, keep at 10.7%.",
+      "GOOGL": "Below cap, negative 20d trend, keep at 12%.",
+      "META": "Positive 1d, moderate vol, keep at 14%.",
+      "MSFT": "Higher weight to balance drift, still within cap.",
+      "NVDA": "Low weight due to extreme vol, stay at 4%."
+    },
+    "risks": [
+      "High volatility in NVDA, potential drawdown.",
+      "Negative momentum in AMZN and GOOGL may erode value.",
+      "Cash allocation may limit upside if markets rally."
+    ],
+    "current": {
+      "AAPL": "19.7%",
+      "MSFT": "15.9%",
+      "GOOGL": "12.0%",
+      "AMZN": "9.9%",
+      "META": "14.0%",
+      "NVDA": "7.5%"
+    },
+    "baseline": {
+      "AAPL": "19.7%",
+      "MSFT": "14.6%",
+      "GOOGL": "14.6%",
+      "AMZN": "10.7%",
+      "META": "14.3%",
+      "NVDA": "4.0%"
+    },
+    "proposed": {
+      "AAPL": "19.7%",
+      "AMZN": "10.7%",
+      "GOOGL": "12.0%",
+      "META": "14.0%",
+      "MSFT": "18.5%",
+      "NVDA": "4.0%"
+    },
+    "final": {
+      "AAPL": "19.7%",
+      "AMZN": "10.7%",
+      "GOOGL": "12.0%",
+      "META": "14.0%",
+      "MSFT": "18.5%",
+      "NVDA": "4.0%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [],
+  "trades": [
+    {
+      "ticker": "NVDA",
+      "side": "sell",
+      "amountIn": "2330399084",
+      "minAmountOut": "3520670899",
+      "notionalUsd": 3531.264694
+    },
+    {
+      "ticker": "MSFT",
+      "side": "buy",
+      "amountIn": "2603968913",
+      "minAmountOut": "528933092",
+      "notionalUsd": 2603.968913
+    },
+    {
+      "ticker": "AMZN",
+      "side": "buy",
+      "amountIn": "770011555",
+      "minAmountOut": "310609127",
+      "notionalUsd": 770.011555
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
