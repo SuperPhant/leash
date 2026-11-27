@@ -1,0 +1,195 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84532,
+  "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
+  "epoch": 15,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-27T13:30:25.473Z",
+  "profile": {
+    "id": "steady",
+    "name": "Steady Megacaps",
+    "style": "Capital preservation. Hold a diversified core of the six largest US megacaps, prefer lower volatility, trade rarely and only when weights drift or risk rises."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "20.0%",
+      "MSFT": "20.0%",
+      "GOOGL": "20.0%",
+      "AMZN": "20.0%",
+      "META": "20.0%",
+      "NVDA": "20.0%"
+    },
+    "minCash": "20.0%",
+    "maxTurnoverPerWindow": "25% per 24h",
+    "maxSlippage": "0.3%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "6h",
+    "expiry": "2027-11-20T20:58:47.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-27T13:30:18.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 358.4142,
+        "oracleAgeHours": 10.94,
+        "ret1d": 0.004217444622085953,
+        "ret5d": 0.02851316163893225,
+        "ret20d": 0.020873667006754415,
+        "vol20d": 0.3136925608794208,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5832.25662091,
+        "supplyChange7d": -0.04438130238412763,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 250.5,
+        "oracleAgeHours": 1.72,
+        "ret1d": 0.02423616718968824,
+        "ret5d": -0.029372618233458048,
+        "ret20d": 0.09839515916863983,
+        "vol20d": 0.47155376482319183,
+        "maxDrawdown20d": -0.09904774184041842,
+        "onchainSupply": 10706.50295316,
+        "supplyChange7d": 0.03459437578753177,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 280.9611,
+        "oracleAgeHours": 0.48,
+        "ret1d": 0.02924470914026589,
+        "ret5d": 0.027322773174483395,
+        "ret20d": -0.0022730421521476307,
+        "vol20d": 0.39621526427741277,
+        "maxDrawdown20d": -0.11733958031951508,
+        "onchainSupply": 37651.15031465,
+        "supplyChange7d": 0.01345339166652959,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 629.3474,
+        "oracleAgeHours": 1.72,
+        "ret1d": 0.03428647754453129,
+        "ret5d": 0.052926655787217,
+        "ret20d": 0.016537004267142663,
+        "vol20d": 0.492925713485363,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9240.44376476,
+        "supplyChange7d": 0.02245489936969336,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 500.5377,
+        "oracleAgeHours": 9.28,
+        "ret1d": 0.019780226168380377,
+        "ret5d": 0.0014634843601895042,
+        "ret20d": -0.055709136122903735,
+        "vol20d": 0.4079600378861939,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2584.72338925,
+        "supplyChange7d": -0.04365401343223729,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 152.8472,
+        "oracleAgeHours": 0.12,
+        "ret1d": 0.0251102178881335,
+        "ret5d": 0.04343757572893536,
+        "ret20d": -0.2759437875122822,
+        "vol20d": 1.2646642950043026,
+        "maxDrawdown20d": -0.4046377704771873,
+        "onchainSupply": 71072.8677391,
+        "supplyChange7d": 0.1569157616749024,
+        "multiplier": 1.0005379395763696
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-6-luna-classic",
+    "summary": "Retain baseline weights: signals do not justify infrequent, preservation-focused trading. The 42.1% unallocated NAV remains cash, above the 20% minimum.",
+    "perAsset": {
+      "AAPL": "Near cap; hold baseline.",
+      "AMZN": "Hold baseline despite recent gains; volatility is elevated.",
+      "GOOGL": "Hold baseline; volatility and drawdown argue against increasing.",
+      "META": "Hold baseline; elevated volatility and drawdown warrant caution.",
+      "MSFT": "Hold baseline despite weak 20-day return; avoid reactive trading.",
+      "NVDA": "Hold small baseline weight; extreme volatility and drawdown argue against increasing."
+    },
+    "risks": [
+      "NVDA has 126% annualized volatility and a -40.5% 20-day drawdown.",
+      "AMZN, META and GOOGL have elevated volatility and drawdowns."
+    ],
+    "current": {
+      "AAPL": "19.6%",
+      "MSFT": "16.0%",
+      "GOOGL": "14.0%",
+      "AMZN": "13.0%",
+      "META": "13.1%",
+      "NVDA": "2.5%"
+    },
+    "baseline": {
+      "AAPL": "19.7%",
+      "MSFT": "13.5%",
+      "GOOGL": "15.2%",
+      "AMZN": "13.7%",
+      "META": "12.7%",
+      "NVDA": "3.3%"
+    },
+    "proposed": {
+      "AAPL": "19.7%",
+      "AMZN": "13.7%",
+      "GOOGL": "15.2%",
+      "META": "12.7%",
+      "MSFT": "13.5%",
+      "NVDA": "3.3%"
+    },
+    "final": {
+      "AAPL": "19.7%",
+      "AMZN": "13.7%",
+      "GOOGL": "15.2%",
+      "META": "12.7%",
+      "MSFT": "13.5%",
+      "NVDA": "3.3%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [],
+  "trades": [
+    {
+      "ticker": "MSFT",
+      "side": "sell",
+      "amountIn": "506174076",
+      "minAmountOut": "2525991344",
+      "notionalUsd": 2533.592121
+    },
+    {
+      "ticker": "GOOGL",
+      "side": "buy",
+      "amountIn": "1199748820",
+      "minAmountOut": "425734992",
+      "notionalUsd": 1199.74882
+    },
+    {
+      "ticker": "AMZN",
+      "side": "buy",
+      "amountIn": "740691014",
+      "minAmountOut": "294797979",
+      "notionalUsd": 740.691014
+    },
+    {
+      "ticker": "NVDA",
+      "side": "buy",
+      "amountIn": "812875162",
+      "minAmountOut": "530226690",
+      "notionalUsd": 812.875162
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
