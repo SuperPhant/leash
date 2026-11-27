@@ -1,0 +1,246 @@
+{
+  "schema": "leash.rationale/v1",
+  "chainId": 84532,
+  "vault": "0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518",
+  "epoch": 22,
+  "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+  "builderCode": "bc_dm1hqi1l",
+  "createdAt": "2026-11-27T19:33:13.099Z",
+  "profile": {
+    "id": "momentum",
+    "name": "Momentum Hunter",
+    "style": "Aggressive. Concentrate in the strongest recent performers among the ten names and rotate out of laggards quickly, within the caps."
+  },
+  "mandate": {
+    "caps": {
+      "AAPL": "30.0%",
+      "AMZN": "30.0%",
+      "GOOGL": "30.0%",
+      "META": "30.0%",
+      "MSFT": "30.0%",
+      "MSTR": "30.0%",
+      "NVDA": "30.0%",
+      "SNDK": "30.0%",
+      "SPCX": "30.0%",
+      "TSLA": "30.0%"
+    },
+    "minCash": "5.0%",
+    "maxTurnoverPerWindow": "60% per 24h",
+    "maxSlippage": "0.5%",
+    "maxOracleAge": "26.0h",
+    "cooldown": "2h",
+    "expiry": "2027-11-20T20:58:47.000Z"
+  },
+  "market": {
+    "asOf": "2026-11-27T19:31:27.000Z",
+    "source": "Base mainnet Chainlink tokenized-equity feeds (total-return) + Coinbase Tokenized Stocks API",
+    "signals": [
+      {
+        "ticker": "AAPL",
+        "price": 358.3287,
+        "oracleAgeHours": 4.23,
+        "ret1d": 0.00397779275280663,
+        "ret5d": 0.028267711708655607,
+        "ret20d": 0.0206300402066959,
+        "vol20d": 0.3136925608794208,
+        "maxDrawdown20d": -0.05810182297318778,
+        "onchainSupply": 5839.25311993,
+        "supplyChange7d": -0.043234921880671684,
+        "multiplier": 1.0005003893019802
+      },
+      {
+        "ticker": "AMZN",
+        "price": 254.454,
+        "oracleAgeHours": 3.45,
+        "ret1d": 0.0404031524394608,
+        "ret5d": -0.014051817165574132,
+        "ret20d": 0.11573270192054719,
+        "vol20d": 0.47155376482319183,
+        "maxDrawdown20d": -0.09904774184041842,
+        "onchainSupply": 10252.50295316,
+        "supplyChange7d": -0.009276704121796264,
+        "multiplier": 1
+      },
+      {
+        "ticker": "GOOGL",
+        "price": 276.0291,
+        "oracleAgeHours": 1.48,
+        "ret1d": 0.011177278967059223,
+        "ret5d": 0.009289080793223325,
+        "ret20d": -0.019787207620046376,
+        "vol20d": 0.39621526427741277,
+        "maxDrawdown20d": -0.11733958031951508,
+        "onchainSupply": 38327.89510153,
+        "supplyChange7d": 0.031669283978571716,
+        "multiplier": 1.000377118676784
+      },
+      {
+        "ticker": "META",
+        "price": 628.8173,
+        "oracleAgeHours": 2.47,
+        "ret1d": 0.033415187974165095,
+        "ret5d": 0.052039663611000986,
+        "ret20d": 0.015680666967043733,
+        "vol20d": 0.492925713485363,
+        "maxDrawdown20d": -0.12994635917585373,
+        "onchainSupply": 9238.44439216,
+        "supplyChange7d": 0.02223366883547029,
+        "multiplier": 1.0003137922895982
+      },
+      {
+        "ticker": "MSFT",
+        "price": 494.9,
+        "oracleAgeHours": 0.06,
+        "ret1d": 0.008294130949882739,
+        "ret5d": -0.009816303817729355,
+        "ret20d": -0.06634497166680542,
+        "vol20d": 0.4079600378861939,
+        "maxDrawdown20d": -0.134473772326415,
+        "onchainSupply": 2596.00153801,
+        "supplyChange7d": -0.03948110566678775,
+        "multiplier": 1
+      },
+      {
+        "ticker": "MSTR",
+        "price": 82.06,
+        "oracleAgeHours": 1.32,
+        "ret1d": 0.029740243443342917,
+        "ret5d": -0.04924110763526823,
+        "ret20d": -0.4053192260308718,
+        "vol20d": 0.8411348625502837,
+        "maxDrawdown20d": -0.4568682993102704,
+        "onchainSupply": 22947.97804302,
+        "supplyChange7d": -0.03066658246791998,
+        "multiplier": 1
+      },
+      {
+        "ticker": "NVDA",
+        "price": 149.6114,
+        "oracleAgeHours": 0.94,
+        "ret1d": 0.0034088698169003617,
+        "ret5d": 0.02134824169795957,
+        "ret20d": -0.2912718913748168,
+        "vol20d": 1.2646642950043026,
+        "maxDrawdown20d": -0.4046377704771873,
+        "onchainSupply": 72669.00911138,
+        "supplyChange7d": 0.18289756275025493,
+        "multiplier": 1.0005379395763696
+      },
+      {
+        "ticker": "SNDK",
+        "price": 684.44,
+        "oracleAgeHours": 0.26,
+        "ret1d": 0.16030379060147837,
+        "ret5d": -0.09923260261028288,
+        "ret20d": -0.47626936423704236,
+        "vol20d": 1.4566118602313685,
+        "maxDrawdown20d": -0.5486262821812673,
+        "onchainSupply": 3237.28853669,
+        "supplyChange7d": -0.027852530527226804,
+        "multiplier": 8
+      },
+      {
+        "ticker": "SPCX",
+        "price": 132.307,
+        "oracleAgeHours": 0.56,
+        "ret1d": 0.042156669686109094,
+        "ret5d": -0.037854740478138305,
+        "ret20d": -0.0672476731774928,
+        "vol20d": 0.714035703876581,
+        "maxDrawdown20d": -0.1299178404295369,
+        "onchainSupply": 30940.21302107,
+        "supplyChange7d": 0.030338541011032838,
+        "multiplier": 1
+      },
+      {
+        "ticker": "TSLA",
+        "price": 398.777,
+        "oracleAgeHours": 0.84,
+        "ret1d": 0.04407600620512242,
+        "ret5d": 0.06328993093282942,
+        "ret20d": -0.000684124796391461,
+        "vol20d": 0.7399416933426214,
+        "maxDrawdown20d": -0.14617916790933505,
+        "onchainSupply": 6331.40192677,
+        "supplyChange7d": -0.023041453790694555,
+        "multiplier": 1
+      }
+    ]
+  },
+  "decision": {
+    "source": "llm:gpt-6-luna-classic",
+    "summary": "Favor AMZN’s strong 20-day momentum and META’s recent strength; retain AAPL, add TSLA on 5-day momentum, and cut weaker names. Leaves 5% cash.",
+    "perAsset": {
+      "AAPL": "Trim from baseline; positive 5-day momentum, but moderate 20-day return.",
+      "AMZN": "Raise to cap; strongest 20-day return among names with positive medium-term momentum.",
+      "GOOGL": "Reduce sharply; negative 20-day return and weak recent momentum.",
+      "META": "Increase modestly; strongest 5-day return, tempered by volatility and drawdown.",
+      "MSFT": "Stay out; weakest 20-day momentum among established large-cap names.",
+      "MSTR": "Stay out; severe 20-day loss and high volatility.",
+      "NVDA": "Stay out; steep 20-day decline and extreme volatility.",
+      "SNDK": "Stay out; sharp daily bounce does not offset steep 5-day and 20-day losses.",
+      "SPCX": "Stay out; negative 5-day and 20-day returns.",
+      "TSLA": "Add; strongest 5-day return, despite flat 20-day performance and high volatility."
+    },
+    "risks": [
+      "Concentrated exposure to volatile growth stocks.",
+      "TSLA momentum may reverse; 20-day return remains negative.",
+      "Maintain at least 5% cash."
+    ],
+    "current": {
+      "AAPL": "29.3%",
+      "AMZN": "29.2%",
+      "GOOGL": "10.2%",
+      "META": "21.1%",
+      "MSFT": "0.0%",
+      "MSTR": "0.0%",
+      "NVDA": "0.0%",
+      "SNDK": "0.0%",
+      "SPCX": "0.4%",
+      "TSLA": "0.0%"
+    },
+    "baseline": {
+      "AMZN": "29.7%",
+      "AAPL": "28.0%",
+      "META": "22.8%",
+      "TSLA": "12.5%"
+    },
+    "proposed": {
+      "AAPL": "22.0%",
+      "AMZN": "30.0%",
+      "GOOGL": "5.0%",
+      "META": "25.0%",
+      "TSLA": "13.0%"
+    },
+    "final": {
+      "AAPL": "22.0%",
+      "AMZN": "29.5%",
+      "GOOGL": "5.0%",
+      "META": "25.0%",
+      "TSLA": "13.0%"
+    },
+    "frozen": []
+  },
+  "leashCorrections": [
+    "AMZN: 30.0% exceeds cap 30.0%, clipped",
+    "total exposure 95.0% above 94.5% (cash floor 5.0%), scaled down",
+    "turnover budget $151.3 < desired $29,817.06: trades scaled to 0.5%"
+  ],
+  "trades": [
+    {
+      "ticker": "AAPL",
+      "side": "sell",
+      "amountIn": "10445321",
+      "minAmountOut": "37241441",
+      "notionalUsd": 37.428584
+    },
+    {
+      "ticker": "GOOGL",
+      "side": "sell",
+      "amountIn": "9773969",
+      "minAmountOut": "26844099",
+      "notionalUsd": 26.978994
+    }
+  ],
+  "disclaimer": "Testnet demonstration on mirrored prices. Not investment advice. Not available to US persons."
+}
