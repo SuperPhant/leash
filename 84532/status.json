@@ -1,107 +1,95 @@
 {
  "latest": {
-  "at": "2026-11-27T21:32:03.026Z",
+  "at": "2026-11-28T04:34:53.814Z",
   "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
   "relay": {
-   "relayed": [
-    {
-     "ticker": "MSTR",
-     "round": "36893488147419108251",
-     "price": 81.54,
-     "updatedAt": "2026-11-27T20:02:02.000Z"
-    },
-    {
-     "ticker": "SNDK",
-     "round": "36893488147419109169",
-     "price": 680.4,
-     "updatedAt": "2026-11-27T19:41:41.000Z"
-    }
-   ],
+   "relayed": [],
    "unchanged": [
     "AAPL",
     "AMZN",
     "GOOGL",
     "META",
     "MSFT",
+    "MSTR",
     "NVDA",
+    "SNDK",
     "SPCX",
     "TSLA"
    ],
-   "multipliers": [],
-   "tx": "0x3eb17205c425b576c9a4e3201e56989e340e27f16443df30868594b8e0676c6b"
+   "multipliers": []
   },
   "research": {
-   "asOf": "2026-11-27T21:31:52.000Z",
+   "asOf": "2026-11-28T04:33:10.000Z",
    "signals": [
     {
      "ticker": "AAPL",
      "price": 358.32871417,
      "updatedAt": 1795792669,
-     "ageHours": 6.234166666666667,
+     "ageHours": 13.255833333333333,
      "stale": false,
      "ret1d": 0.00913903962556728,
      "ret5d": 0.04862966472404806,
      "ret20d": 0.03921229835154638,
      "vol20d": 0.3070617496431611,
      "maxDrawdown20d": -0.04394996583973898,
-     "supply": 5831.25712105,
-     "supplyChange7d": -0.0445450710274784,
+     "supply": 5829.25812133,
+     "supplyChange7d": -0.04487260831418016,
      "multiplier": 1.0005003893019802,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "AMZN",
      "price": 254.454,
      "updatedAt": 1795795451,
-     "ageHours": 5.461388888888889,
+     "ageHours": 12.483055555555556,
      "stale": false,
      "ret1d": 0.029511247774720806,
      "ret5d": 0.03149151449923093,
      "ret20d": 0.0590280776414156,
      "vol20d": 0.4467731497720612,
      "maxDrawdown20d": -0.09904774184041842,
-     "supply": 10215.50295316,
-     "supplyChange7d": -0.012852100502071861,
+     "supply": 10207.50295316,
+     "supplyChange7d": -0.01959371292672818,
      "multiplier": 1,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "GOOGL",
      "price": 276.02905646,
      "updatedAt": 1795802575,
-     "ageHours": 3.4825,
+     "ageHours": 10.504166666666666,
      "stale": false,
      "ret1d": 0.006122240608050333,
      "ret5d": 0.04244588005507577,
      "ret20d": -0.019281510218697395,
      "vol20d": 0.39708575565499565,
      "maxDrawdown20d": -0.11733958031951508,
-     "supply": 38327.89510153,
-     "supplyChange7d": 0.031669283978571716,
+     "supply": 38324.89623246,
+     "supplyChange7d": 0.028903169587886968,
      "multiplier": 1.000377118676784,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "META",
      "price": 628.8172561,
      "updatedAt": 1795798992,
-     "ageHours": 4.477777777777778,
+     "ageHours": 11.499444444444444,
      "stale": false,
      "ret1d": 0.027912680885862517,
      "ret5d": 0.12222008987815003,
      "ret20d": 0.020905609138859527,
      "vol20d": 0.5024838707252498,
      "maxDrawdown20d": -0.12994635917585373,
-     "supply": 9204.45505774,
-     "supplyChange7d": 0.018472749729336213,
+     "supply": 9205.45474404,
+     "supplyChange7d": 0.01858336499644775,
      "multiplier": 1.0003137922895982,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "MSFT",
      "price": 494.9,
      "updatedAt": 1795807660,
-     "ageHours": 2.07,
+     "ageHours": 9.091666666666667,
      "stale": false,
      "ret1d": 0.008294130949882739,
      "ret5d": 0.027001059373693126,
@@ -111,13 +99,13 @@
      "supply": 2596.00153801,
      "supplyChange7d": -0.03948110566678775,
      "multiplier": 1,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "MSTR",
      "price": 81.54,
      "updatedAt": 1795809722,
-     "ageHours": 1.4972222222222222,
+     "ageHours": 8.518888888888888,
      "stale": false,
      "ret1d": -0.006820950060901221,
      "ret5d": 0.04831047680513434,
@@ -125,15 +113,15 @@
      "vol20d": 0.8372404542861935,
      "maxDrawdown20d": -0.4568682993102704,
      "supply": 22997.97804302,
-     "supplyChange7d": -0.02855455888197511,
+     "supplyChange7d": -0.07816264695429198,
      "multiplier": 1,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "NVDA",
      "price": 149.61143864,
      "updatedAt": 1795804516,
-     "ageHours": 2.9433333333333334,
+     "ageHours": 9.965,
      "stale": false,
      "ret1d": -0.012664329258713636,
      "ret5d": 0.1904149666888244,
@@ -141,47 +129,47 @@
      "vol20d": 1.2634021053103586,
      "maxDrawdown20d": -0.3923102972781467,
      "supply": 72958.85319277,
-     "supplyChange7d": 0.18761561053494846,
+     "supplyChange7d": 0.17638119426730303,
      "multiplier": 1.0005379395763696,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "SNDK",
      "price": 680.4,
      "updatedAt": 1795808501,
-     "ageHours": 1.8363888888888888,
+     "ageHours": 8.858055555555556,
      "stale": false,
      "ret1d": 0.11050178228681107,
      "ret5d": 0.07692307692307687,
      "ret20d": -0.40699422595053925,
      "vol20d": 1.4974043539616342,
      "maxDrawdown20d": -0.48588735156335117,
-     "supply": 3223.28853669,
-     "supplyChange7d": -0.03205668607850631,
+     "supply": 3211.03853669,
+     "supplyChange7d": -0.03573532218587594,
      "multiplier": 8,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "SPCX",
      "price": 132.307,
      "updatedAt": 1795805860,
-     "ageHours": 2.57,
+     "ageHours": 9.591666666666667,
      "stale": false,
      "ret1d": 0.02416689244107273,
      "ret5d": 0.035428079511660604,
      "ret20d": -0.023023813919143654,
      "vol20d": 0.7031267942801562,
      "maxDrawdown20d": -0.12780384736611505,
-     "supply": 30994.21302107,
-     "supplyChange7d": 0.03213679240564038,
+     "supply": 31003.21302107,
+     "supplyChange7d": 0.02943904238358308,
      "multiplier": 1,
-     "closes": 24
+     "closes": 23
     },
     {
      "ticker": "TSLA",
      "price": 398.777,
      "updatedAt": 1795804868,
-     "ageHours": 2.8455555555555554,
+     "ageHours": 9.867222222222223,
      "stale": false,
      "ret1d": 0.04439730242912332,
      "ret5d": 0.15566349067888274,
@@ -189,9 +177,9 @@
      "vol20d": 0.7575074412411819,
      "maxDrawdown20d": -0.14617916790933505,
      "supply": 6331.40192677,
-     "supplyChange7d": -0.023041453790694555,
+     "supplyChange7d": -0.03001566572333214,
      "multiplier": 1,
-     "closes": 24
+     "closes": 23
     }
    ]
   },
@@ -200,7 +188,7 @@
     "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
     "name": "Steady Megacaps",
     "status": "on-target",
-    "at": "2026-11-27T21:31:53.489Z",
+    "at": "2026-11-28T04:33:11.232Z",
     "epoch": 15,
     "nav": "$102,013.71",
     "detail": "portfolio already within tolerance of targets"
@@ -208,24 +196,246 @@
    {
     "vault": "0xD3968A5043a56b20039132384467460D4e5cCF9C",
     "name": "Balanced Ten",
-    "status": "cooldown",
-    "at": "2026-11-27T21:32:02.739Z",
-    "epoch": 18,
+    "status": "rebalanced",
+    "at": "2026-11-28T04:33:16.752Z",
+    "epoch": 19,
     "nav": "$104,372.42",
-    "detail": "next rebalance allowed at 2026-11-27T23:32:26.000Z"
+    "tx": "0x8ebeda43f358f0e45c1257600e301c775042e231de68429b2eb9d2349ac38fb0",
+    "note": "https://raw.githubusercontent.com/SuperPhant/leash/notes/84532/0xD3968A5043a56b20039132384467460D4e5cCF9C/19.json",
+    "detail": "sell GOOGL $710.76, buy MSFT $979.47, buy NVDA $727.51, buy SPCX $1,332.35"
    },
    {
     "vault": "0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518",
     "name": "Momentum Hunter",
-    "status": "cooldown",
-    "at": "2026-11-27T21:32:02.859Z",
-    "epoch": 22,
+    "status": "rebalanced",
+    "at": "2026-11-28T04:34:06.106Z",
+    "epoch": 23,
     "nav": "$101,313.02",
-    "detail": "next rebalance allowed at 2026-11-27T21:33:14.000Z"
+    "tx": "0x6ab60d9d8ee811a87e89ab49e1566d941c88b898610cd2e5fb4cd0f3ec4ed945",
+    "note": "https://raw.githubusercontent.com/SuperPhant/leash/notes/84532/0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518/23.json",
+    "detail": "sell AAPL $3,986.18, sell GOOGL $10,352.34, buy META $8,581.89, buy SPCX $9,847.75"
    }
   ]
  },
  "history": [
+  {
+   "at": "2026-11-28T04:34:53.814Z",
+   "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
+   "relay": {
+    "relayed": [],
+    "unchanged": [
+     "AAPL",
+     "AMZN",
+     "GOOGL",
+     "META",
+     "MSFT",
+     "MSTR",
+     "NVDA",
+     "SNDK",
+     "SPCX",
+     "TSLA"
+    ],
+    "multipliers": []
+   },
+   "research": {
+    "asOf": "2026-11-28T04:33:10.000Z",
+    "signals": [
+     {
+      "ticker": "AAPL",
+      "price": 358.32871417,
+      "updatedAt": 1795792669,
+      "ageHours": 13.255833333333333,
+      "stale": false,
+      "ret1d": 0.00913903962556728,
+      "ret5d": 0.04862966472404806,
+      "ret20d": 0.03921229835154638,
+      "vol20d": 0.3070617496431611,
+      "maxDrawdown20d": -0.04394996583973898,
+      "supply": 5829.25812133,
+      "supplyChange7d": -0.04487260831418016,
+      "multiplier": 1.0005003893019802,
+      "closes": 23
+     },
+     {
+      "ticker": "AMZN",
+      "price": 254.454,
+      "updatedAt": 1795795451,
+      "ageHours": 12.483055555555556,
+      "stale": false,
+      "ret1d": 0.029511247774720806,
+      "ret5d": 0.03149151449923093,
+      "ret20d": 0.0590280776414156,
+      "vol20d": 0.4467731497720612,
+      "maxDrawdown20d": -0.09904774184041842,
+      "supply": 10207.50295316,
+      "supplyChange7d": -0.01959371292672818,
+      "multiplier": 1,
+      "closes": 23
+     },
+     {
+      "ticker": "GOOGL",
+      "price": 276.02905646,
+      "updatedAt": 1795802575,
+      "ageHours": 10.504166666666666,
+      "stale": false,
+      "ret1d": 0.006122240608050333,
+      "ret5d": 0.04244588005507577,
+      "ret20d": -0.019281510218697395,
+      "vol20d": 0.39708575565499565,
+      "maxDrawdown20d": -0.11733958031951508,
+      "supply": 38324.89623246,
+      "supplyChange7d": 0.028903169587886968,
+      "multiplier": 1.000377118676784,
+      "closes": 23
+     },
+     {
+      "ticker": "META",
+      "price": 628.8172561,
+      "updatedAt": 1795798992,
+      "ageHours": 11.499444444444444,
+      "stale": false,
+      "ret1d": 0.027912680885862517,
+      "ret5d": 0.12222008987815003,
+      "ret20d": 0.020905609138859527,
+      "vol20d": 0.5024838707252498,
+      "maxDrawdown20d": -0.12994635917585373,
+      "supply": 9205.45474404,
+      "supplyChange7d": 0.01858336499644775,
+      "multiplier": 1.0003137922895982,
+      "closes": 23
+     },
+     {
+      "ticker": "MSFT",
+      "price": 494.9,
+      "updatedAt": 1795807660,
+      "ageHours": 9.091666666666667,
+      "stale": false,
+      "ret1d": 0.008294130949882739,
+      "ret5d": 0.027001059373693126,
+      "ret20d": -0.05177842558335921,
+      "vol20d": 0.4076830461335895,
+      "maxDrawdown20d": -0.134473772326415,
+      "supply": 2596.00153801,
+      "supplyChange7d": -0.03948110566678775,
+      "multiplier": 1,
+      "closes": 23
+     },
+     {
+      "ticker": "MSTR",
+      "price": 81.54,
+      "updatedAt": 1795809722,
+      "ageHours": 8.518888888888888,
+      "stale": false,
+      "ret1d": -0.006820950060901221,
+      "ret5d": 0.04831047680513434,
+      "ret20d": -0.3767055747930378,
+      "vol20d": 0.8372404542861935,
+      "maxDrawdown20d": -0.4568682993102704,
+      "supply": 22997.97804302,
+      "supplyChange7d": -0.07816264695429198,
+      "multiplier": 1,
+      "closes": 23
+     },
+     {
+      "ticker": "NVDA",
+      "price": 149.61143864,
+      "updatedAt": 1795804516,
+      "ageHours": 9.965,
+      "stale": false,
+      "ret1d": -0.012664329258713636,
+      "ret5d": 0.1904149666888244,
+      "ret20d": -0.2682513854940597,
+      "vol20d": 1.2634021053103586,
+      "maxDrawdown20d": -0.3923102972781467,
+      "supply": 72958.85319277,
+      "supplyChange7d": 0.17638119426730303,
+      "multiplier": 1.0005379395763696,
+      "closes": 23
+     },
+     {
+      "ticker": "SNDK",
+      "price": 680.4,
+      "updatedAt": 1795808501,
+      "ageHours": 8.858055555555556,
+      "stale": false,
+      "ret1d": 0.11050178228681107,
+      "ret5d": 0.07692307692307687,
+      "ret20d": -0.40699422595053925,
+      "vol20d": 1.4974043539616342,
+      "maxDrawdown20d": -0.48588735156335117,
+      "supply": 3211.03853669,
+      "supplyChange7d": -0.03573532218587594,
+      "multiplier": 8,
+      "closes": 23
+     },
+     {
+      "ticker": "SPCX",
+      "price": 132.307,
+      "updatedAt": 1795805860,
+      "ageHours": 9.591666666666667,
+      "stale": false,
+      "ret1d": 0.02416689244107273,
+      "ret5d": 0.035428079511660604,
+      "ret20d": -0.023023813919143654,
+      "vol20d": 0.7031267942801562,
+      "maxDrawdown20d": -0.12780384736611505,
+      "supply": 31003.21302107,
+      "supplyChange7d": 0.02943904238358308,
+      "multiplier": 1,
+      "closes": 23
+     },
+     {
+      "ticker": "TSLA",
+      "price": 398.777,
+      "updatedAt": 1795804868,
+      "ageHours": 9.867222222222223,
+      "stale": false,
+      "ret1d": 0.04439730242912332,
+      "ret5d": 0.15566349067888274,
+      "ret20d": -0.0016890652862412425,
+      "vol20d": 0.7575074412411819,
+      "maxDrawdown20d": -0.14617916790933505,
+      "supply": 6331.40192677,
+      "supplyChange7d": -0.03001566572333214,
+      "multiplier": 1,
+      "closes": 23
+     }
+    ]
+   },
+   "vaults": [
+    {
+     "vault": "0xFA7c9967467C75F78c08B4E7aEB10e04F76b23de",
+     "name": "Steady Megacaps",
+     "status": "on-target",
+     "at": "2026-11-28T04:33:11.232Z",
+     "epoch": 15,
+     "nav": "$102,013.71",
+     "detail": "portfolio already within tolerance of targets"
+    },
+    {
+     "vault": "0xD3968A5043a56b20039132384467460D4e5cCF9C",
+     "name": "Balanced Ten",
+     "status": "rebalanced",
+     "at": "2026-11-28T04:33:16.752Z",
+     "epoch": 19,
+     "nav": "$104,372.42",
+     "tx": "0x8ebeda43f358f0e45c1257600e301c775042e231de68429b2eb9d2349ac38fb0",
+     "note": "https://raw.githubusercontent.com/SuperPhant/leash/notes/84532/0xD3968A5043a56b20039132384467460D4e5cCF9C/19.json",
+     "detail": "sell GOOGL $710.76, buy MSFT $979.47, buy NVDA $727.51, buy SPCX $1,332.35"
+    },
+    {
+     "vault": "0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518",
+     "name": "Momentum Hunter",
+     "status": "rebalanced",
+     "at": "2026-11-28T04:34:06.106Z",
+     "epoch": 23,
+     "nav": "$101,313.02",
+     "tx": "0x6ab60d9d8ee811a87e89ab49e1566d941c88b898610cd2e5fb4cd0f3ec4ed945",
+     "note": "https://raw.githubusercontent.com/SuperPhant/leash/notes/84532/0x705b1B7Ed27e9cbFee45cc0Ecc824C2E9B1E4518/23.json",
+     "detail": "sell AAPL $3,986.18, sell GOOGL $10,352.34, buy META $8,581.89, buy SPCX $9,847.75"
+    }
+   ]
+  },
   {
    "at": "2026-11-27T21:32:03.026Z",
    "agent": "0x447406ff8B4f98e4328974e26be1B92606D07f3d",
